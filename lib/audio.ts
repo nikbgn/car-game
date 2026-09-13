@@ -44,7 +44,7 @@ class AudioManager {
 
     this.bgm.volume = BGM_VOLUME;
     void this.bgm.play().catch(() => {
-      // Ignore autoplay race — next tap will retry via startGame
+      // Ignore autoplay race - next tap will retry via startGame
     });
   }
 

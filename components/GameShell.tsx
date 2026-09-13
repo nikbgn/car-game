@@ -31,7 +31,7 @@ export function GameShell() {
   return (
     <main className="relative h-[100dvh] w-full overflow-hidden bg-slate-900">
       <Game />
-      {/* Cinematic darken + vignette — sits above 3D, below UI */}
+      {/* Cinematic darken + vignette - sits above 3D, below UI */}
       <div
         className="pointer-events-none absolute inset-0 z-[1]"
         style={{

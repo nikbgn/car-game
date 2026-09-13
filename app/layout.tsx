@@ -2,8 +2,8 @@ import type { Metadata, Viewport } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Lane Rush",
-  description: "3-lane endless car dodge — dodge traffic and collect coins.",
+  title: "Late Night Lane Rush",
+  description: "3-lane endless car dodge - dodge traffic and collect coins.",
 };
 
 export const viewport: Viewport = {

@@ -1,17 +1,17 @@
-Lane Rush — Audio credits (all CC0 / public domain)
+Late Night Lane Rush - Audio credits (all CC0 / public domain)
 
 Coin pickup (coin.ogg)
-  Kenney — Casino Audio pack (chipLay1.ogg)
-  License: CC0 1.0 — https://creativecommons.org/publicdomain/zero/1.0/
+  Kenney - Casino Audio pack (chipLay1.ogg)
+  License: CC0 1.0 - https://creativecommons.org/publicdomain/zero/1.0/
   Source: https://opengameart.org/content/54-casino-sound-effects-cards-dice-chips
 
 Crash (crash.ogg)
-  Kenney — Impact Sounds (impactMetal_medium_002.ogg)
+  Kenney - Impact Sounds (impactMetal_medium_002.ogg)
   License: CC0 1.0
   Source: https://kenney.nl/assets/impact-sounds
 
 Background music (bgm.ogg)
-  MintoDog — "Cool Highway" (cool_highway_bpm140.ogg)
+  MintoDog - "Cool Highway" (cool_highway_bpm140.ogg)
   License: CC0
   Source: https://opengameart.org/content/cool-highway
   Note: Loopable techno track, night-highway vibe.

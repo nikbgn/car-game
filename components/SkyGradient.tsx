@@ -51,7 +51,7 @@ void main() {
   vec3 dir = normalize(vWorldPosition);
   float h = dir.y;
 
-  // Smooth night gradient — wide blend, no sharp bands
+  // Smooth night gradient - wide blend, no sharp bands
   float t = smoothstep(-0.25, 0.85, h);
   vec3 sky = mix(horizonColor, topColor, t);
 
@@ -63,7 +63,7 @@ void main() {
   vec3 hillColor = vec3(0.06, 0.09, 0.08);
   sky = mix(sky, hillColor, hills * 0.82);
 
-  // Sparse static stars — upper sky only
+  // Sparse static stars - upper sky only
   float star = stars(dir);
   sky += vec3(0.88, 0.92, 1.0) * star * 0.7;
 

@@ -2,7 +2,7 @@
 
 3-lane endless car dodge game built with **Next.js**, **TypeScript**, and **React Three Fiber**.
 
-Dodge traffic, collect coins, and beat your best score. No backend — best score saved in `localStorage`.
+Dodge traffic, collect coins, and beat your best score. No backend - best score saved in `localStorage`.
 
 ## Quick start
 
@@ -53,7 +53,17 @@ Audio files in `public/audio/`:
 | `coin.ogg` | Coin pickup |
 | `crash.ogg` | Game over / collision |
 
-Sound credits: Kenney (Casino Audio, Impact Sounds) and MintoDog (Cool Highway) — see `lib/assetCredits.ts`.
+Sound credits: Kenney (Casino Audio, Impact Sounds) and MintoDog (Cool Highway) - see `lib/assetCredits.ts`.
+
+## Performance
+
+The game stays smooth on mid-range phones and laptops because it avoids heavy runtime work:
+
+- **Object pooling** - obstacles, coins, and roadside scenery are reused from fixed pools instead of spawning/destroying meshes every frame.
+- **Recycled road** - a small set of road segments scrolls and loops; the fog hides the recycle seam.
+- **Lightweight world** - road, grass, coins, and scenery are procedural geometry; only 5 small GLB models are loaded (player + 4 obstacles), preloaded at startup.
+- **Simple collision** - lane + depth checks only; no physics engine.
+- **Small asset footprint** - about 0.8 MB of models and 3 audio files, so load time stays low.
 
 ## v1 scope
 

@@ -7,7 +7,7 @@ export type SeedRow = {
   kind?: ObstacleKind;
 };
 
-/** Wider spacing at run start — time to orient before first dodge */
+/** Wider spacing at run start - time to orient before first dodge */
 export const INITIAL_LAYOUT: SeedRow[] = [
   { z: -7, obstacleLanes: [], coinLane: 1 },
   { z: -12, obstacleLanes: [2], coinLane: 0, kind: "taxi" },
