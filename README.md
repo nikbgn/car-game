@@ -1,5 +1,9 @@
 # Lane Rush
 
+**[Play the game →](https://late-night-lane-rush.vercel.app/)**
+
+![Lane Rush gameplay preview](./late-night-lane-rush.gif)
+
 3-lane endless car dodge game built with **Next.js**, **TypeScript**, and **React Three Fiber**.
 
 Dodge traffic, collect coins, and beat your best score. No backend - best score saved in `localStorage`.
@@ -11,7 +15,7 @@ npm install
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000).
+Open [http://localhost:3000](http://localhost:3000), or play the deployed version at [late-night-lane-rush.vercel.app](https://late-night-lane-rush.vercel.app/).
 
 ## Controls
 
