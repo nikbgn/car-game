@@ -35,13 +35,24 @@ export function StartScreen({ onStart, bestScore }: StartScreenProps) {
         <p className="mt-4 text-xs text-white/75">
           ← → or swipe to change lanes
         </p>
-        <button
-          type="button"
-          onClick={() => setCreditsOpen(true)}
-          className="mt-3 text-xs text-white/60 underline-offset-2 transition hover:text-white/85 hover:underline"
-        >
-          Assets Credits
-        </button>
+        <div className="mt-3 flex items-center gap-3 text-xs text-white/60">
+          <button
+            type="button"
+            onClick={() => setCreditsOpen(true)}
+            className="underline-offset-2 transition hover:text-white/85 hover:underline"
+          >
+            Assets Credits
+          </button>
+          <span aria-hidden="true">·</span>
+          <a
+            href="https://github.com/nikbgn/car-game"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline-offset-2 transition hover:text-white/85 hover:underline"
+          >
+            GitHub
+          </a>
+        </div>
       </div>
       <AssetsCredits open={creditsOpen} onClose={() => setCreditsOpen(false)} />
     </>
