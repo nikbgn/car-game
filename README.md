@@ -13,12 +13,6 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000).
 
-## Deploy (Vercel)
-
-1. Push this folder to a Git repo (or import directly in Vercel).
-2. Framework preset: **Next.js**
-3. Deploy — no environment variables required.
-
 ## Controls
 
 | Platform | Input |
@@ -32,8 +26,9 @@ Open [http://localhost:3000](http://localhost:3000).
 app/              Next.js pages
 components/       R3F scene, UI, game logic
 hooks/            keyboard, swipe, game state
-lib/              constants, collision, storage, audio stubs
+lib/              constants, collision, storage, audio, speed
 public/models/    GLB assets used in-game
+public/audio/     BGM and SFX (OGG)
 ```
 
 ## Assets
@@ -50,13 +45,22 @@ In-game models live in `public/models/` (Kenney CC0, copied from Car Kit):
 
 Road and grass are procedural geometry (`Highway.tsx`), not GLB models.
 
+Audio files in `public/audio/`:
+
+| Path | Used for |
+|------|----------|
+| `bgm.ogg` | Background music loop |
+| `coin.ogg` | Coin pickup |
+| `crash.ogg` | Game over / collision |
+
+Sound credits: Kenney (Casino Audio, Impact Sounds) and MintoDog (Cool Highway) — see `lib/assetCredits.ts`.
+
 ## v1 scope
 
-- [x] 3 lanes, fixed scroll speed
+- [x] 3 lanes, speed ramp over time
 - [x] Obstacle & coin pooling
 - [x] Lane + Z collision
 - [x] Score + localStorage best
 - [x] Start / HUD / game over UI
-- [x] AudioManager stubs (no sounds yet)
-- [ ] Audio files (v2)
-- [ ] Speed ramp / power-ups (v2)
+- [x] BGM + coin/crash SFX
+- [ ] Power-ups (v2)

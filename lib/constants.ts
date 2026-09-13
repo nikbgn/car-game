@@ -2,8 +2,9 @@ export const LANE_COUNT = 3;
 export const LANE_X: readonly [number, number, number] = [-1.35, 0, 1.35];
 
 export const SCROLL_SPEED_BASE = 8.5;
-export const SCROLL_SPEED_MAX = 15;
-export const SPEED_RAMP_PER_SECOND = 0.12;
+export const SCROLL_SPEED_MAX = 19;
+/** +0.28 per second — clearly faster within ~15s, max speed around 37s */
+export const SPEED_RAMP_PER_SECOND = 0.28;
 /** @deprecated use getScrollSpeed() — kept for idle menu scroll */
 export const SCROLL_SPEED = SCROLL_SPEED_BASE;
 export const IDLE_SCROLL_SPEED = 2.2;

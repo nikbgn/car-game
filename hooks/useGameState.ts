@@ -16,10 +16,11 @@ export function useGameState() {
   }, []);
 
   const startGame = useCallback(() => {
+    audioManager.unlock();
     setScore(0);
     setLane(1);
     setStatus("playing");
-    audioManager.stopAll();
+    audioManager.startMusic();
   }, []);
 
   const addScore = useCallback((points: number) => {
@@ -41,6 +42,7 @@ export function useGameState() {
     setStatus("menu");
     setScore(0);
     setLane(1);
+    audioManager.stopAll();
     refreshBest();
   }, [refreshBest]);
 

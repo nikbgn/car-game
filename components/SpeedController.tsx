@@ -2,6 +2,7 @@
 
 import { useFrame } from "@react-three/fiber";
 import { SCROLL_SPEED_BASE } from "@/lib/constants";
+import { setRunSpeed } from "@/lib/runSpeed";
 import { getScrollSpeed } from "@/lib/speed";
 
 type SpeedControllerProps = {
@@ -19,11 +20,14 @@ export function SpeedController({
     if (!playing) {
       elapsedRef.current = 0;
       speedRef.current = SCROLL_SPEED_BASE;
+      setRunSpeed(SCROLL_SPEED_BASE);
       return;
     }
 
     elapsedRef.current += delta;
-    speedRef.current = getScrollSpeed(elapsedRef.current);
+    const nextSpeed = getScrollSpeed(elapsedRef.current);
+    speedRef.current = nextSpeed;
+    setRunSpeed(nextSpeed);
   });
 
   return null;
