@@ -5,6 +5,8 @@ import { ChaseCamera } from "@/components/ChaseCamera";
 import { GameWorld } from "@/components/GameWorld";
 import { Highway } from "@/components/Highway";
 import { PlayerCar } from "@/components/PlayerCar";
+import { RoadsideScenery } from "@/components/RoadsideScenery";
+import { SkyGradient } from "@/components/SkyGradient";
 import { SpeedController } from "@/components/SpeedController";
 import {
   COIN_POINTS,
@@ -12,6 +14,7 @@ import {
   IDLE_SCROLL_SPEED,
   SCROLL_SPEED_BASE,
   SKY_COLOR,
+  SKY_HORIZON_COLOR,
 } from "@/lib/constants";
 import { useGame } from "@/context/GameContext";
 
@@ -26,17 +29,26 @@ export function Scene() {
   return (
     <>
       <color attach="background" args={[SKY_COLOR]} />
-      <fogExp2 attach="fog" args={[SKY_COLOR, FOG_DENSITY]} />
+      <fogExp2 attach="fog" args={[SKY_HORIZON_COLOR, FOG_DENSITY]} />
 
-      <ambientLight intensity={0.62} />
+      <SkyGradient />
+
+      <ambientLight intensity={0.28} color="#8899bb" />
       <directionalLight
-        position={[8, 16, 10]}
-        intensity={1.2}
+        position={[8, 20, 4]}
+        intensity={0.72}
+        color="#b8c8e8"
         castShadow
         shadow-mapSize={[1024, 1024]}
+        shadow-camera-left={-8}
+        shadow-camera-right={8}
+        shadow-camera-top={8}
+        shadow-camera-bottom={-20}
+        shadow-camera-near={0.5}
+        shadow-camera-far={50}
       />
       <hemisphereLight
-        args={["#c8e8ff", "#3d7a3f", 0.45]}
+        args={["#3a4a68", "#1a3a28", 0.32]}
         position={[0, 40, 0]}
       />
 
@@ -46,7 +58,14 @@ export function Scene() {
         elapsedRef={elapsedRef}
       />
 
-      <Highway scrollSpeed={menuScrollSpeed} speedRef={speedRef} />
+      <Highway
+        scrollSpeed={menuScrollSpeed}
+        speedRef={playing ? speedRef : undefined}
+      />
+      <RoadsideScenery
+        scrollSpeed={menuScrollSpeed}
+        speedRef={playing ? speedRef : undefined}
+      />
       <PlayerCar lane={lane} />
 
       <GameWorld

@@ -47,9 +47,13 @@ export const CAMERA_OFFSET = { x: 0, y: 1.7, z: 2.15 };
 export const CAMERA_LOOK_AT = { x: 0, y: 0.5, z: -5.5 };
 export const CAMERA_FOV = 82;
 
-export const SKY_COLOR = "#9ccfe8";
+export const SKY_COLOR = "#0e1520";
+export const SKY_HORIZON_COLOR = "#1a2535";
 /** Exponential fog — hides segment recycle / world edge */
-export const FOG_DENSITY = 0.075;
+export const FOG_DENSITY = 0.086;
+
+/** Scrolling roadside props (trees, lamps, barriers) */
+export const SCENERY_POOL_SIZE = 28;
 
 export type GameStatus = "menu" | "playing" | "gameover";
 

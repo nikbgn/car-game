@@ -2,6 +2,7 @@
 
 import { useGLTF } from "@react-three/drei";
 import { useMemo } from "react";
+import * as THREE from "three";
 import type { ObstacleKind } from "@/lib/constants";
 import { OBSTACLE_SCALE } from "@/lib/constants";
 
@@ -23,7 +24,16 @@ type ObstacleModelProps = {
 
 export function ObstacleModel({ kind }: ObstacleModelProps) {
   const { scene } = useGLTF(MODEL_PATH[kind]);
-  const model = useMemo(() => scene.clone(), [scene]);
+  const model = useMemo(() => {
+    const clone = scene.clone();
+    clone.traverse((child) => {
+      if (child instanceof THREE.Mesh) {
+        child.castShadow = true;
+        child.receiveShadow = true;
+      }
+    });
+    return clone;
+  }, [scene]);
   const y = kind === "cone" ? 0.05 : 0.14;
   const scale = kind === "cone" ? OBSTACLE_SCALE * 0.92 : OBSTACLE_SCALE;
 

@@ -31,6 +31,16 @@ export function GameShell() {
   return (
     <main className="relative h-[100dvh] w-full overflow-hidden bg-slate-900">
       <Game />
+      {/* Cinematic darken + vignette — sits above 3D, below UI */}
+      <div
+        className="pointer-events-none absolute inset-0 z-[1]"
+        style={{
+          background: [
+            "radial-gradient(ellipse 90% 80% at 50% 40%, transparent 55%, rgba(4,8,16,0.38) 100%)",
+            "linear-gradient(to bottom, rgba(6,10,18,0.3) 0%, transparent 25%, transparent 70%, rgba(4,8,16,0.4) 100%)",
+          ].join(", "),
+        }}
+      />
       {status === "playing" && (
         <>
           <HUD score={score} bestScore={bestScore} />

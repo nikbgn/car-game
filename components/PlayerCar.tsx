@@ -21,7 +21,16 @@ type PlayerCarProps = {
 export function PlayerCar({ lane }: PlayerCarProps) {
   const groupRef = useRef<THREE.Group>(null);
   const { scene } = useGLTF("/models/player/hatchback-sports.glb");
-  const carModel = useMemo(() => scene.clone(), [scene]);
+  const carModel = useMemo(() => {
+    const clone = scene.clone();
+    clone.traverse((child) => {
+      if (child instanceof THREE.Mesh) {
+        child.castShadow = true;
+        child.receiveShadow = true;
+      }
+    });
+    return clone;
+  }, [scene]);
   const targetX = useRef(LANE_X[lane]);
   const currentX = useRef(LANE_X[lane]);
 
